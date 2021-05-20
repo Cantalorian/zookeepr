@@ -1,5 +1,3 @@
-const { response } = require("express");
-
 const $animalForm = document.querySelector('#animals-form');
 const $displayArea = document.querySelector('#display-area');
 
@@ -32,7 +30,7 @@ const getAnimals = (formData = {}) => {
   });
 
   console.log(queryUrl);
-  
+
   fetch(queryUrl)
     .then(response => {
       if (!response.ok) {
@@ -62,7 +60,7 @@ const handleGetAnimalsSubmit = event => {
   }
 
   const personalityTraitArr = [];
-  const selectedTraits = $animalForm.querySelector('[name="personality"').selectedOptions;
+  const selectedTraits = $animalForm.querySelector('[name="personality"]').selectedOptions;
 
   for (let i = 0; i < selectedTraits.length; i += 1) {
     personalityTraitArr.push(selectedTraits[i].value);
